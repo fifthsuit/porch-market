@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WaitlistForm from "./components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -548,69 +549,7 @@ export default function Home() {
             the waitlist to get early access — whether you&apos;re hungry or selling.
           </p>
 
-          <form
-            style={{
-              display: "flex",
-              gap: "12px",
-              maxWidth: "480px",
-              margin: "0 auto 16px",
-            }}
-          >
-            <input
-              type="email"
-              placeholder="Your email"
-              required
-              style={{
-                flex: 1,
-                padding: "14px 20px",
-                borderRadius: "8px",
-                border: "1px solid rgba(45, 80, 22, 0.2)",
-                background: "var(--white)",
-                fontSize: "16px",
-                fontFamily: "var(--font-body), system-ui, sans-serif",
-                outline: "none",
-              }}
-            />
-            <button type="submit" className="btn-primary">
-              Join
-            </button>
-          </form>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "24px",
-              justifyContent: "center",
-              marginTop: "32px",
-            }}
-          >
-            <label
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "14px",
-                color: "var(--stone)",
-                cursor: "pointer",
-              }}
-            >
-              <input type="radio" name="type" value="customer" defaultChecked style={{ accentColor: "var(--forest)" }} />
-              I want to buy
-            </label>
-            <label
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "14px",
-                color: "var(--stone)",
-                cursor: "pointer",
-              }}
-            >
-              <input type="radio" name="type" value="vendor" style={{ accentColor: "var(--forest)" }} />
-              I want to sell
-            </label>
-          </div>
+          <WaitlistForm />
         </div>
       </section>
 
