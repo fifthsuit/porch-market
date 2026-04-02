@@ -5,71 +5,17 @@ export default function Home() {
   return (
     <main>
       {/* Nav */}
-      <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 50,
-          padding: "20px 40px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          background: "rgba(250, 247, 242, 0.92)",
-          borderBottom: "1px solid rgba(45, 80, 22, 0.08)",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: "28px",
-            color: "var(--forest)",
-          }}
-        >
-          Porch Market
-        </span>
-        <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
-          <a
-            href="#how-it-works"
-            style={{
-              color: "var(--stone)",
-              textDecoration: "none",
-              fontWeight: 500,
-              fontSize: "15px",
-            }}
-          >
-            How It Works
-          </a>
-          <a
-            href="#vendors"
-            style={{
-              color: "var(--stone)",
-              textDecoration: "none",
-              fontWeight: 500,
-              fontSize: "15px",
-            }}
-          >
-            For Vendors
-          </a>
-          <a href="#waitlist" className="btn-primary" style={{ padding: "10px 24px", fontSize: "14px" }}>
-            Join the Waitlist
-          </a>
+      <nav className="nav">
+        <span className="nav-logo">Porch Market</span>
+        <div className="nav-links">
+          <a href="#how-it-works" className="nav-link">How It Works</a>
+          <a href="#vendors" className="nav-link">For Vendors</a>
+          <a href="#waitlist" className="btn-primary nav-cta">Join the Waitlist</a>
         </div>
       </nav>
 
       {/* Hero */}
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "60px",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "140px 40px 100px",
-          alignItems: "center",
-        }}
-      >
+      <section className="hero">
         <div>
           <p
             style={{
@@ -116,14 +62,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div
-          style={{
-            position: "relative",
-            borderRadius: "16px",
-            overflow: "hidden",
-            aspectRatio: "4/3",
-          }}
-        >
+        <div className="hero-image">
           <Image
             src="/hero-porch.png"
             alt="Fresh produce in wooden crates on a Southern porch"
@@ -139,15 +78,16 @@ export default function Home() {
       <section
         style={{
           background: "var(--cream)",
-          padding: "40px",
+          padding: "32px 24px",
           textAlign: "center",
         }}
       >
         <p
           style={{
-            fontSize: "17px",
+            fontSize: "16px",
             color: "var(--stone)",
             fontWeight: 500,
+            lineHeight: 1.6,
           }}
         >
           Connecting local farmers, bakers, and makers with homes across the Northshore and Greater New Orleans
@@ -155,14 +95,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section
-        id="how-it-works"
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "100px 40px",
-        }}
-      >
+      <section id="how-it-works" className="section">
         <p
           style={{
             fontWeight: 600,
@@ -179,20 +112,14 @@ export default function Home() {
           style={{
             fontSize: "clamp(32px, 4vw, 48px)",
             color: "var(--ink)",
-            marginBottom: "60px",
+            marginBottom: "48px",
             maxWidth: "500px",
           }}
         >
           Farm fresh, three easy steps.
         </h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "48px",
-          }}
-        >
+        <div className="steps-grid">
           {[
             {
               num: "01",
@@ -244,13 +171,7 @@ export default function Home() {
       </section>
 
       {/* Market image break */}
-      <section
-        style={{
-          position: "relative",
-          height: "400px",
-          overflow: "hidden",
-        }}
-      >
+      <section className="image-break">
         <Image
           src="/hero-market.png"
           alt="Vibrant farmers market with fresh produce"
@@ -273,19 +194,10 @@ export default function Home() {
         id="vendors"
         style={{
           background: "var(--forest)",
-          padding: "100px 40px",
+          padding: "60px 24px",
         }}
       >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "center",
-          }}
-        >
+        <div className="vendor-grid">
           <div>
             <p
               style={{
@@ -357,9 +269,7 @@ export default function Home() {
             <a
               href="#waitlist"
               className="btn-primary"
-              style={{
-                background: "var(--terracotta)",
-              }}
+              style={{ background: "var(--terracotta)" }}
             >
               Apply as a Vendor
             </a>
@@ -369,7 +279,7 @@ export default function Home() {
             style={{
               background: "rgba(255,255,255,0.06)",
               borderRadius: "16px",
-              padding: "48px 40px",
+              padding: "32px 24px",
               border: "1px solid rgba(255,255,255,0.1)",
             }}
           >
@@ -421,14 +331,8 @@ export default function Home() {
       </section>
 
       {/* What's in the Box */}
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "100px 40px",
-        }}
-      >
-        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+      <section className="section">
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <p
             style={{
               fontWeight: 600,
@@ -454,13 +358,7 @@ export default function Home() {
             Every vendor curates their own offerings. Here&apos;s the kind of thing you&apos;ll find.
           </p>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "24px",
-          }}
-        >
+        <div className="category-grid">
           {[
             {
               emoji: "\ud83c\udf45",
@@ -488,15 +386,15 @@ export default function Home() {
               style={{
                 background: "var(--cream)",
                 borderRadius: "12px",
-                padding: "32px 24px",
+                padding: "24px 20px",
               }}
             >
-              <span style={{ fontSize: "36px", display: "block", marginBottom: "16px" }}>
+              <span style={{ fontSize: "32px", display: "block", marginBottom: "12px" }}>
                 {item.emoji}
               </span>
               <h3
                 style={{
-                  fontSize: "18px",
+                  fontSize: "17px",
                   fontFamily: "var(--font-body), system-ui, sans-serif",
                   fontWeight: 700,
                   color: "var(--ink)",
@@ -505,7 +403,7 @@ export default function Home() {
               >
                 {item.title}
               </h3>
-              <p style={{ fontSize: "15px", lineHeight: 1.6, color: "var(--stone)" }}>
+              <p style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--stone)" }}>
                 {item.desc}
               </p>
             </div>
@@ -518,7 +416,7 @@ export default function Home() {
         id="waitlist"
         style={{
           background: "var(--cream)",
-          padding: "100px 40px",
+          padding: "60px 24px",
         }}
       >
         <div
@@ -558,18 +456,10 @@ export default function Home() {
         style={{
           background: "var(--ink)",
           color: "rgba(255,255,255,0.5)",
-          padding: "48px 40px",
+          padding: "40px 24px",
         }}
       >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <div className="footer-inner">
           <div>
             <span
               style={{
